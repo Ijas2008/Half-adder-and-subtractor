@@ -18,7 +18,7 @@ Half adder is a combinational circuit that performs simple addition of two binar
 
 Sum = A’B+AB’ =A ⊕ B Carry = AB
 
-![image](https://github.com/naavaneetha/HALF_ADDER_SUBTRACTOR/assets/154305477/bd4a0b2c-cdbc-4184-ab08-81578f121e1f)
+<img width="1172" height="687" alt="Screenshot 2025-12-10 221703" src="https://github.com/user-attachments/assets/432ee080-219b-446b-8b91-5bbe5e98cee2" />
 
 Figure -01 HALF ADDER
 
@@ -29,7 +29,8 @@ The half-subtractor is a combinational circuit which is used to perform subtract
 Diff = A’B+AB’ =A ⊕ B
 Borrow = A’B
 
- ![image](https://github.com/naavaneetha/HALF_ADDER_SUBTRACTOR/assets/154305477/d76b099c-513f-4e7c-843a-e2fd028a531a)
+<img width="786" height="373" alt="Screenshot 2025-12-10 221948" src="https://github.com/user-attachments/assets/bf589e82-0f97-4cef-b171-072fe8cb16aa" />
+
 
 Figure -02 HALF Subtractor
 
@@ -50,12 +51,45 @@ Figure -02 HALF Subtractor
 
 **Program:**
 
-/* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
+```
 
-Developed by: RegisterNumber:*/
+------------------------------------------------
+Half Adder
+------------------------------------------------
+// Half Adder in Verilog
+module half_adder (
+    input  wire a, b,     // Inputs
+    output wire sum,      // Sum output
+    output wire carry     // Carry output
+);
+
+    // Logic equations
+    assign sum   = a ^ b;   // XOR for sum
+    assign carry = a & b;   // AND for carry
+
+endmodule
+
+-----------------------------------------
+Half Sub
+-------------------------------------
+// Half Subtractor in Verilog
+module half_subtractor (
+    input  wire a, b,         // Inputs
+    output wire diff, borrow  // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b;     // XOR for difference
+    assign borrow = ~a & b;    // Borrow when a < b
+
+endmodule
+
+```
+Developed by: IJAS J RegisterNumber: 25007615
 
 **RTL Schematic**
 
 **Output/TIMING Waveform**
 
-**Result:**
+**Result:** 
+Thus, the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
